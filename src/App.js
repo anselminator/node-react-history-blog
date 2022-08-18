@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { createClient } from "contentful";
 import { useState, useEffect } from "react";
-import { NavLink, Routes, Route } from "react-router-dom";
+import { NavLink, Navigate, Routes, Route } from "react-router-dom";
 import { ClockLoader, BarLoader } from "react-spinners";
 import Single from "./components/Single.js";
 import AllPosts from "./components/AllPosts.js";
@@ -75,6 +75,7 @@ function App() {
           path="/search"
           element={<Search articles={data?.allEntries} />}
         />
+        <Route path="/" element={<Navigate to="/all" replace />} />
       </Routes>
       <hr />
     </div>

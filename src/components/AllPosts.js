@@ -16,12 +16,7 @@ function AllPosts({ articles }) {
         return (
           <div key={i}>
             <NavLink to={`/all/${e.sys.id}`}> {e.fields.title} </NavLink>
-            by{" "}
-            <NavLink to={`/searchAut/${e.fields.author}`}>
-              {" "}
-              {e.fields.author}{" "}
-            </NavLink>
-            published on {e.fields.publishDate}
+            by {e.fields.author} published on {e.fields.publishDate}
             <hr />
           </div>
         );
