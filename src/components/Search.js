@@ -32,15 +32,15 @@ const Search = ({ articles }) => {
   // console.log(articles[5].fields.author);
 
   console.log("selected author", author);
-  
+
   let articlesToShowByAuthor = articles.filter((article) =>
-      article.fields.author?.toLowerCase().includes(author?.toLowerCase())
-    );
+    article.fields.author?.toLowerCase().includes(author?.toLowerCase())
+  );
   console.log("articles by author", articlesToShowByAuthor);
-  
+
   let articlesToShowByCategory = articles.filter((article) =>
-      article.fields.categories?.includes(category)
-    );
+    article.fields.categories?.includes(category)
+  );
   console.log("articles by category", articlesToShowByCategory);
 
   return (
@@ -75,7 +75,6 @@ const Search = ({ articles }) => {
           </Button>
         </form>
       </div>
-
       <div>
         <ul>
           {articlesToShowByAuthor.map((article, i) => {
@@ -84,7 +83,7 @@ const Search = ({ articles }) => {
                 <NavLink to={`/all/${article.sys.id}`}>
                   {article.fields.title}
                 </NavLink>
-                {"by"}
+                {" by "}
                 {article.fields.author}
               </li>
             );
@@ -97,7 +96,7 @@ const Search = ({ articles }) => {
                 <NavLink to={`/all/${article.sys.id}`}>
                   {article.fields.title}
                 </NavLink>
-                {"by"}
+                {" by "}
                 {article.fields.author}
               </li>
             );
