@@ -1,0 +1,17 @@
+.navbar {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-family: Papyrus;
+  font-weight: bold;
+  justify-content: space-evenly;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+.logo {
+  width: 25px;
+  height: 25x;
+}

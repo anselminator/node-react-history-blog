@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-family: Papyrus;
+  font-weight: bold;
+  justify-content: space-evenly;
+}
+
+.footer Link {
+  text-decoration: none;
+}
