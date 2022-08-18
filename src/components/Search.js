@@ -1,5 +1,5 @@
 import React from "react";
-import SearchIcon from "@material-ui/icons/Search";
+import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useState } from "react";
@@ -30,6 +30,8 @@ const Search = ({ articles }) => {
 
   console.log("all articles", articles);
   // console.log(articles[5].fields.author);
+  //        "@material-ui/core": "^4.12.4",
+  //         "@material-ui/icons": "^4.11.3",
 
   console.log("selected author", author);
 
