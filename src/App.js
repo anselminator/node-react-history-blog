@@ -8,6 +8,7 @@ import Single from "./components/Single.js";
 import AllPosts from "./components/AllPosts.js";
 import ByAuthor from "./components/ByAuthor.js";
 import Search from "./components/Search.js";
+import axios from "axios";
 
 const { REACT_APP_CONTENTFUL_API_KEY, REACT_APP_CONTENTFUL_SPACE_ID } =
   process.env;
@@ -28,9 +29,26 @@ function App() {
   };
   console.log("this was in local storage:", data);
 
+  const cheatingInputFromBackend = () => {
+    axios
+      .get("https://contentful-replacement.herokuapp.com/allPosts")
+      .then((res) => {
+        console.log("herouku says...:", res.data.items);
+        // console.log("maybe parsing?:", JSON.parse(res));
+        setData((prev) =>
+          setData({ ...prev, allEntries: res.data.items, isLoading: false })
+        );
+        console.log("data after fetching all:", res);
+        localStorage.setItem("blogData", JSON.stringify(res));
+      })
+      .catch((e) => console.log("fetching error:", e.message));
+  };
+
   function fetchAllEntries(client) {
     console.log("fetching all....");
     setData((prev) => setData({ ...prev, isLoading: true }));
+    cheatingInputFromBackend();
+    /*
     client
       .getEntries()
       .then(function (response) {
@@ -42,6 +60,7 @@ function App() {
         localStorage.setItem("blogData", JSON.stringify(data));
       })
       .catch((e) => console.log("fetching error:", e.message));
+      */
   }
 
   useEffect(() => {

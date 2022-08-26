@@ -79,6 +79,15 @@ function RenderRTF({ obj }) {
     case "heading-3":
       return <h3>{obj.content[0].value}</h3>;
       break;
+    case "heading-4":
+      return <h3>{obj.content[0].value}</h3>;
+      break;
+    case "heading-5":
+      return <h3>{obj.content[0].value}</h3>;
+      break;
+    case "heading-6":
+      return <h3>{obj.content[0].value}</h3>;
+      break;
     case "unordered-list":
       return (
         <ul>
