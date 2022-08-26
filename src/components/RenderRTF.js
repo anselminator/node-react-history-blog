@@ -14,6 +14,7 @@ function RenderRTF({ obj }) {
           </table>
         </>
       );
+      break;
     case "table-row":
       return (
         <>
